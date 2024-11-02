@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  /* Body and Background */
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    background: #4e56ef;
+    color: #e84545;
+    position: relative;
+  }
+  
+  /* Background Animation */
+  body::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, #4b6cb7, #1916b1, #0f0f0f);
+    animation: rotateBackground 10s linear infinite;
+    z-index: 0;
+  }
+  
+  /* Animation Keyframes */
+  @keyframes rotateBackground {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  /* Container */
+  .login-container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 380px;
+    padding: 40px;
+    background: rgba(10, 1, 1, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(189, 196, 5, 0.5);
+    backdrop-filter: blur(10px);
+    text-align: center;
+    overflow: hidden;
+  }
+  
+  /* Title */
+  .login-container h2 {
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    color: #ffffff;
+  }
+  
+  /* Input fields */
+  .login-container input[type="text"],
+  .login-container input[type="password"] {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease;
+  }
+  
+  /* Input Focus */
+  .login-container input[type="text"]:focus,
+  .login-container input[type="password"]:focus {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: #4b6cb7;
+  }
+  
+  /* Button */
+  .login-container button {
+    width: 100%;
+    padding: 15px;
+    margin-top: 20px;
+    background-color: #4b6cb7;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  /* Button Hover */
+  .login-container button:hover {
+    background-color: #182848;
+    transform: scale(1.05);
+  }
+  
+  /* Forgot Password Link */
+  .login-container .forgot-password {
+    margin-top: 15px;
+    display: block;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+  }
+  
+  /* Link Hover */
+  .login-container .forgot-password:hover {
+    color: #4b6cb7;
+  }
